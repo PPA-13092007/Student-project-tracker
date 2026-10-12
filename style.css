@@ -1,0 +1,217 @@
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    color: #1f2937;
+    background-color: #f3f6fb;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+main {
+    width: min(100% - 32px, 800px);
+    margin: 40px auto;
+}
+
+header {
+    margin-bottom: 28px;
+}
+
+h1,
+h2 {
+    line-height: 1.25;
+    color: #172554;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+h2 {
+    margin: 0 0 18px;
+    font-size: 1.35rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+header p {
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+/* Content sections */
+section {
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgb(15 23 42 / 5%);
+}
+
+/* Form controls */
+#project-form {
+    display: grid;
+    gap: 18px;
+}
+
+#project-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #334155;
+}
+
+#project-form input,
+#project-form select {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #1f2937;
+    font: inherit;
+}
+
+#project-form input:focus,
+#project-form select:focus,
+button:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+button:active {
+    background-color: #1e3a8a;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#cancel-button {
+    background-color: #475569;
+}
+
+#cancel-button:hover {
+    background-color: #334155;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Messages and project list */
+#message {
+    margin: 16px 0 0;
+    color: #166534;
+    overflow-wrap: anywhere;
+}
+
+#empty-state {
+    color: #64748b;
+}
+
+#project-list {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#project-list li {
+    padding: 16px;
+    border: 1px solid #dbe3ef;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    overflow-wrap: anywhere;
+}
+
+/* Optional project card elements */
+.project-card {
+    display: grid;
+    gap: 12px;
+}
+
+.project-card h3 {
+    margin: 0;
+    color: #172554;
+    font-size: 1.1rem;
+}
+
+.project-card p {
+    margin: 0;
+}
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-actions button {
+    flex: 0 1 auto;
+}
+
+/* Small screens */
+@media (max-width: 560px) {
+    main {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    #project-form {
+        gap: 16px;
+    }
+
+    #project-form button {
+        width: 100%;
+    }
+
+    .card-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card-actions button {
+        width: 100%;
+    }
+}
+
